@@ -9,37 +9,16 @@ static bool IsName(const std::string& name)
 	return std::all_of(std::begin(name), std::end(name), [](char c) { return std::isalpha(c); });
 }
 
-int main()
+static void OnErrorReset(const std::string& errorMessage)
 {
-	std::string name = "";
-	int age = 0;
+	std::cout << errorMessage << std::endl;
+	std::cin.clear();
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+}
 
-	std::cout << "What is your name?" << std::endl;
-	std::cin >> name;
-
-	// No alphanum funky names allowed.
-	while (!IsName(name))
-	{
-		std::cout << "ERROR: I expected a name." << std::endl;
-		std::cin.clear();
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-		std::cin >> name;
-	}
-
-	std::cout << "What is your age?" << std::endl;
-	std::cin >> age;
-
-	// Valid numbers only
-	while (std::cin.fail())
-	{
-		std::cout << "ERROR: I expected a number." << std::endl;
-		std::cin.clear();
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-		std::cin >> age;
-	}
-
+static void PrintCustomGreeting(const std::string& name, int age)
+{
 	std::cout << "Hello, " << name;
-
 	if (age < 25)
 	{
 		std::cout << ". You are only " << age << " years old." << std::endl;
@@ -52,6 +31,34 @@ int main()
 	{
 		std::cout << ". You are very wise for your age." << std::endl;
 	}
+}
+
+int main()
+{
+	std::string name = "";
+	int age = 0;
+
+	std::cout << "What is your name?" << std::endl;
+	std::cin >> name;
+
+	// No alphanum funky names allowed.
+	while (!IsName(name))
+	{
+		OnErrorReset("ERROR: I expected a name.");
+		std::cin >> name;
+	}
+
+	std::cout << "What is your age?" << std::endl;
+	std::cin >> age;
+
+	// Valid numbers only
+	while (std::cin.fail())
+	{
+		OnErrorReset("ERROR: I expected a number.");
+		std::cin >> age;
+	}
+
+	PrintCustomGreeting(name, age);
 
 	std::cout << "Press enter to exit..." << std::endl;
 	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
