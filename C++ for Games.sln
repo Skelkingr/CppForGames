@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Greeting", "Greeting\Greeti
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "File IO", "File IO\File IO.vcxproj", "{F75A6518-0878-43F1-898D-61AF376404BB}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Type Conversion", "Type Conversion\Type Conversion.vcxproj", "{B1161576-0D41-4509-AFA5-0922A02F501C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +43,14 @@ Global
 		{F75A6518-0878-43F1-898D-61AF376404BB}.Release|x64.Build.0 = Release|x64
 		{F75A6518-0878-43F1-898D-61AF376404BB}.Release|x86.ActiveCfg = Release|Win32
 		{F75A6518-0878-43F1-898D-61AF376404BB}.Release|x86.Build.0 = Release|Win32
+		{B1161576-0D41-4509-AFA5-0922A02F501C}.Debug|x64.ActiveCfg = Debug|x64
+		{B1161576-0D41-4509-AFA5-0922A02F501C}.Debug|x64.Build.0 = Debug|x64
+		{B1161576-0D41-4509-AFA5-0922A02F501C}.Debug|x86.ActiveCfg = Debug|Win32
+		{B1161576-0D41-4509-AFA5-0922A02F501C}.Debug|x86.Build.0 = Debug|Win32
+		{B1161576-0D41-4509-AFA5-0922A02F501C}.Release|x64.ActiveCfg = Release|x64
+		{B1161576-0D41-4509-AFA5-0922A02F501C}.Release|x64.Build.0 = Release|x64
+		{B1161576-0D41-4509-AFA5-0922A02F501C}.Release|x86.ActiveCfg = Release|Win32
+		{B1161576-0D41-4509-AFA5-0922A02F501C}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
